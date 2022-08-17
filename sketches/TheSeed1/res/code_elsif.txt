@@ -1,0 +1,18 @@
+function drawSquare(value, relativeValue, blocksize) {
+  let theta;
+  if (options.realign) {
+    theta = TWO_PI * value / MAX_VALUE;
+  } else {
+    theta = TWO_PI * relativeValue;
+  }
+  if (options.layout == 1) {
+    translate(a, b);
+    rotate(theta);
+    translate(-a, -b);
+    rect(x, y, blocksize);
+  } else {
+    translate(x, y);
+    rotate(theta);
+    rect(0, 0, blocksize);
+  }
+}

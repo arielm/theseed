@@ -1,0 +1,27 @@
+class Arc {
+  constructor({
+    c = new Vec2(0,0), rx = 0, ry = 0, t1 = 0, alpha = Math.PI, phi = 0
+  } = {}) {
+    this.c = c;
+    this.rx = rx;
+    this.ry = ry;
+    this.t1 = t1;
+    this.alpha = alpha % TAU;
+    this.phi = phi;
+    
+    const rotMat = Mat2.identity().rotate(phi);
+    this.start = c.addNew( 
+      new Vec2(
+        this.rx * Math.cos(this.t1), 
+        this.ry * Math.sin(this.t1))
+      .transformByMat2(rotMat) 
+    );
+    this.end = c.addNew( 
+      new Vec2(
+        this.rx * Math.cos(this.t1+this.alpha), 
+        this.ry * Math.sin(this.t1+this.alpha))
+      .transformByMat2(rotMat)
+    );
+    this.fA = ( (  this.alpha > Math.PI ) ? 1 : 0 );
+    this.fS = ( (  this.alpha > 0 ) ? 1 : 0 );
+  }

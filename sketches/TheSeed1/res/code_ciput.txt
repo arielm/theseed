@@ -1,0 +1,14 @@
+  p5.babify = (shapeList) => {
+    console.log('splitting into babies...');
+    let allBabies = [];
+    for (let i = 0; i < shapeList.length; i++) {
+      for (let j = i; j < shapeList.length; j++) {
+        const babies = shapeList[i].makeBabies(shapeList[j]);
+        allBabies = allBabies.concat(babies);
+      }
+      console.log(`progress: ${i}/${shapeList.length}`);
+    }
+    allBabies.sort((s1, s2) => s2.area() - s1.area());
+    console.log(`made babies: ${allBabies.length}`);
+    return allBabies;
+  }

@@ -1,0 +1,42 @@
+var divsvg = '<div class="block block'+i+'" style="width:'+divwidth+'px; height:'+divwidth+'px;">';
+      divsvg += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" overflow="visible">';
+      divsvg += '<defs>\
+              <linearGradient id="shapegradone'+i+'" gradientTransform="rotate(90)"><stop offset="0%" stop-color="' + colornow1 + '" /><stop offset="100%" stop-color="' + colornow2 + '" /></linearGradient>\
+              <linearGradient id="shapegradtwo'+i+'" gradientTransform="rotate(90)"><stop offset="0%" stop-color="' + colornow3 + '" /><stop offset="100%" stop-color="' + colornow4 + '" /></linearGradient>\
+              </defs>';
+      var welke = randomIntFromInterval(0, 9)
+     
+      switch(welke) {
+         case 0:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M800 0H0v1000h1000V0H800zm0 800H200V200h600v600z"/>';
+          break;
+        case 1:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M400 0h200v1000H400z"/>';
+          break;
+        case 2:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M199.9 800V600h800V0H0v200h800v200H0v400h0v200H1000V800z"/>';
+          break;
+        case 3:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M0 0v200h800v200H0v200h800v200H0v200h1000V0z"/>';
+          break;
+        case 4:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M800 0v400H200V0H0v600h800v400h200V0z"/>';
+          break;
+        case 5:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M1000 200V0H0v600h800v200H0v200h1000V400H200V200z"/>';
+          break;
+        case 6:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M200 400V0H0v1000h1000V400H200zm600 400H200V600h600v200z"/>';
+          break;
+        case 7:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M720.2 200H0V0h1000L601 1000H401l319.2-800"/>';
+          break;
+        case 8:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M0 0v1000h1000V0H0zm800 800H200V600h600v200zm0-400H200V200h600v200z"/>';
+          break;
+        case 9:
+          divsvg += '<path fill="url(#shapegradone'+i+')" d="M0 0h1000v1000H0z"/><path class="dropsh" fill="url(#shapegradtwo'+i+')" d="M800 0H0v600h800v400h200V0H800zm0 400H200V200h600v200z"/>';
+          break;
+      }
+      divsvg += '</svg>';
+      divsvg += '</div>';

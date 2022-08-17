@@ -1,0 +1,34 @@
+function spiralPath(center, rounds, spacing, startRadius) {
+    const path = new Path()
+    const start = center.clone()
+    for (let i = 0; i < rounds; i++) {
+        const dir = pointFromAngle(i * 60)
+        const p = start.add(dir.multiply(startRadius + i * spacing))
+        path.add(p)
+    }
+    path.smooth()
+    return path
+}
+
+function offsetPath(path, offset) {
+    const res = new Path()
+    path.segments.forEach(seg => {
+        const newSeg = seg.clone()
+        newSeg.point = newSeg.point.add(seg.location.normal.multiply(offset))
+        res.add(newSeg)
+    })
+    return res
+}
+
+function getFillet(path1, path2, radius) {
+    const loc = path1.getIntersections(path2)[0]
+    if (!loc) return null
+    const reverseTangent = loc.offset > path1.length / 2 ? -1 : 1
+    const toNormal = loc.point.add(loc.normal.multiply(radius))
+    const toTangent = loc.point.add(loc.tangent.multiply(radius * reverseTangent))
+    const path2Point = path2.getNearestLocation(toNormal)
+    const path1Point = path1.getNearestLocation(toTangent)
+    const seg1 = new Segment(path2Point.point, path2Point.tangent.multiply(radius * reverseTangent))
+    const seg2 = new Segment(path1Point.point, path1Point.tangent.multiply(-radius * reverseTangent))
+    return new Path([seg2, seg1])
+}
