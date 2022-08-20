@@ -1,6 +1,6 @@
-# The seed - Issue 1
+# The seed :: Issue 1
 
-The [first edition]() of our fx(hash) zine.
+The [first edition](https://www.fxhash.xyz/generative/18334) of our fx(hash) zine.
 
 Instructions for building WASM version on macOS:
 
