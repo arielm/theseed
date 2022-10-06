@@ -4,26 +4,14 @@ The [first edition](https://www.fxhash.xyz/generative/18334) of our fx(hash) zin
 
 Instructions for building WASM version on macOS:
 
-1. Depends on [chronotext-cross](https://github.com/arielm/chronotext-cross) for infrastructure.
-   - Clone with:
-   ```
-   git clone --recurse-submodules https://github.com/arielm/chronotext-cross
-   ```
-   
-   - To be done each time Terminal is started (will set the CROSS_PATH variable):
-   ```
-   cd path/to/chronotext-cross
-   source setup.sh
-   ```
-   
-   - [Install emscripten](https://github.com/arielm/chronotext-cross/wiki/Installing-Emscripten-on-macOS)
+1. Install Emscripten and build the chronotext-cross library following [these instructions](https://arielm.github.io/cross-blog/2022/10/06/running-in-the-browser.html)
 
 2. Clone this repository with:
    ```
    git clone https://github.com/arielm/theseed
    ```
 
-3. Add THESEED_PATH variable:
+3. Add `THESEED_PATH` variable:
    ```
    export THESEED_PATH=path/to/theseed
    ```
@@ -34,4 +22,4 @@ Instructions for building WASM version on macOS:
    RUN_TEST -DPLATFORM=emscripten
    ```
    
-   The resulting WASM files will be in `build/emscripten`. Note that it won't properly run, because `TheSeed1.html` doesn't include the fx(hash) snippet.
+   The resulting `.wasm`, `.js` and `.data` files will be in `build/emscripten`. Note that it won't properly run, because `TheSeed1.html` doesn't include the fx(hash) snippet.
