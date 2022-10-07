@@ -2,7 +2,7 @@
 
 The [first edition](https://www.fxhash.xyz/generative/18334) of our fx(hash) zine.
 
-Instructions for building WASM version on macOS:
+### Instructions for building WASM + WebGL version on macOS:
 
 1. Install Emscripten and build the chronotext-cross library following [these instructions](https://arielm.github.io/cross-blog/2022/10/06/running-in-the-browser.html)
 
@@ -22,4 +22,4 @@ Instructions for building WASM version on macOS:
    RUN_TEST -DPLATFORM=emscripten
    ```
    
-   The resulting `.wasm`, `.js` and `.data` files will be in `build/emscripten`. Note that it won't properly run, because `TheSeed1.html` doesn't include the fx(hash) snippet.
+   The resulting `.wasm`, `.js` and `.data` files will be in `build/emscripten`. Note that it won't properly run, because `TheSeed1.html` doesn't include the fx(hash) snippet. You will have to add it yourself and run again `TheSeed1.html` on a server.
