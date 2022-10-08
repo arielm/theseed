@@ -2,7 +2,7 @@
 
 The [first edition](https://www.fxhash.xyz/generative/18334) of our fx(hash) zine.
 
-### Instructions for building WASM + WebGL version on macOS:
+### Instructions for building WASM + WebGL version on macOS or Linux:
 
 1. Install Emscripten and build the chronotext-cross library following [these instructions](https://arielm.github.io/cross-blog/2022/10/06/running-in-the-browser.html)
 
